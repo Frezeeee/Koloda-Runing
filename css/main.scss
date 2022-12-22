@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+body * {
+    box-sizing: border-box;
+}
+.container {
+    margin: 0;
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 100px;
+    margin: 0 auto;
+    gap: 150px;
+    width: 100%;
+    height: 100vh;
+}
+.h1 {
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+.p {
+    margin-bottom: 45px;
+}
+.koloda {
+    display: block;
+    max-width: 25%;
+    max-height: 25%;
+    border-radius: 100%;
+    animation: spin 1s infinite linear;
+    position: absolute;
+    transition: all 0.3s;
+    left: 50%;
+    top: 50%;
+}
+.left {
+    max-width: 500px;
+}
+.right {
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    background: -webkit-linear-gradient(135deg, rgb(73, 71, 172), rgb(121, 40, 159));
+    background: -moz-linear-gradient(135deg, rgb(73, 71, 172), rgb(121, 40, 159));
+    background: linear-gradient(135deg, rgb(73, 71, 172), rgb(121, 40, 159));
+    cursor: url('../img/pine-cone.png'), auto;
+}
+.demo {
+    padding: 20px 50px;
+    color: white;
+    font-size: 20px;
+    border: 2px #4947ac solid;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0), rgb(121, 40, 159));
+    border-radius: 50px;
+    background: -webkit-linear-gradient(135deg, rgb(73, 71, 172), #79289f);
+    background: -moz-linear-gradient(135deg, rgb(73, 71, 172), rgb(121, 40, 159));
+    background: linear-gradient(135deg, rgb(73, 71, 172), rgb(121, 40, 159));
+    text-align: center;
+    align-items: center;
+    display: flex;
+    p {
+        margin: 0;
+    }
+    svg {
+        width: 50px;
+        height: 30px;
+        fill: white;
+        }
+    &:hover {
+        background: transparent;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-image: linear-gradient(135deg, rgb(73, 71, 172), rgb(121, 40, 159));
+        cursor: pointer;
+        svg {
+            fill: #79289f;
+        }
+    }
+}
+@keyframes spin {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.7);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+/* Responsive */
+
+/* Large: 992px - 1199px */
+@media (max-width: 1199px) {
+    .content {
+        gap: 75px;
+    }
+}
+
+/* Medium: 768px - 991px */
+@media (max-width: 991px) {
+    .container {
+        max-width: 768px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    .content {
+        flex-direction: column;
+        padding-left: 0;
+        height: auto;
+    }
+    .right {
+        width: 100%;
+        height: 500px;
+        border-radius: 50px;
+        margin-bottom: 50px;
+    }
+}
+
+/* Small: 576px - 767px */
+@media (max-width: 767px) {
+    .left {
+        text-align: center;
+    }
+    .demo {
+        margin: 0 auto;
+    }
+}
+
+/* Extra small: 0px (320px) - 575px */
+@media (max-width: 575px) {}
